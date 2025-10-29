@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.side_toggle {
+  display: block;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #cfcfcf28;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+  z-index: 1100;
+}
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1000;
+}
+
+/* Content area */
+.main-content {
+  padding: 20px;
+  height: 100%;
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="side_toggle" id="sideToggle">
+  <a href="#">Home</a><br>
+  <a href="#">About</a><br>
+  <a href="#">Contact</a>
+</div>
+
+<!-- Overlay -->
+<div id="overlay"></div>
+
+<!-- Button to open sidebar -->
+<button onclick="openSide()">☰ Open Sidebar</button>
+
+<!-- Main page content -->
+<div class="main-content">
+  <h2>Click anywhere to close sidebar</h2>
+  <p>Try opening the sidebar and clicking outside it.</p>
+</div>
+<div class="main-content">
+  <h2>Click anywhere to close sidebar</h2>
+  <p>Try opening the sidebar and clicking outside it.</p>
+</div>
+<div class="main-content">
+  <h2>Click anywhere to close sidebar</h2>
+  <p>Try opening the sidebar and clicking outside it.</p>
+</div>
+<script>
+const sidebar = document.getElementById('sideToggle');
+const overlay = document.getElementById('overlay');
+
+function openSide() {
+  sidebar.style.width = '250px';
+  overlay.style.display = 'block';
+}
+
+function closeSide() {
+  sidebar.style.width = '0';
+  overlay.style.display = 'none';
+}
+
+// Close sidebar when clicking overlay or anywhere outside sidebar
+document.addEventListener('click', function(e) {
+  const isClickInside = sidebar.contains(e.target);
+  const isButton = e.target.tagName === 'BUTTON';
+
+  // Close only if sidebar is open and click is outside
+  if (!isClickInside && sidebar.style.width === '250px' && !isButton) {
+    closeSide();
+  }
+});
+</script>
+
+</body>
+</html>
