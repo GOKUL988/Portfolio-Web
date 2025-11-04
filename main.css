@@ -625,10 +625,10 @@ html::-webkit-scrollbar {
 .maindiv3-div3 span.show:hover {
   transform: translateY(40px) scale(1.1);
 }
-.maindiv3-div3_span1 {  background-color: #f2e9e4; color:black;}
-.maindiv3-div3_span2 {  background-color: #4a4e69; color:white;}
-.maindiv3-div3_span3 {  background-color: #252422; color:white;}
-.maindiv3-div3_span4 {  background-color: #eb5f289f; color:whitesmoke;} 
+.maindiv3-div3_span1 {  background-color: #96A8A8; color:black;}
+.maindiv3-div3_span2 {  background-color: #574F44; color:white;}
+.maindiv3-div3_span3 {  background-color: #441404; color:white;}
+.maindiv3-div3_span4 {  background-color: #C8906D; color:black;} 
 @media (min-width:300px) and (max-width:700px) {
     .maindiv3-div3{
         width: 100%;
