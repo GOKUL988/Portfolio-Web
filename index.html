@@ -6,8 +6,8 @@
         <link rel="icon" href="source\icons8-portfolio-48.png" type="(●'◡'●)">
         <title>PORTFOLIO</title>
     </head>
-    <body class="bodymain" >
-        <table cellpadding="15px" width="100%" class="ani1-tab1"> 
+    <body class="bodymain">
+        <table class="ani1-tab1"> 
             <tr>
                 <td class="tab1-td1"><a href="index.html"><img src="source\db\gklogo.png" class="tab1-logo"></a></td>
                <td class="tab1-td2">
@@ -21,12 +21,14 @@
         </table>    
         <div id="overlay" onclick="closeSidebar()" style="display:none;"></div>
         <div id="side-toggle" class="side_toggle">
+            <button onclick="sidetoggle()" class="togg-canc">X</button>
             <div onclick="ab()">About</div>
             <div onclick="wrks()">Works</div>
             <div><a href="source\db\RESUME.pdf">Resume</a></div>
             <div onclick="cont()">Contact</div>
         </div>
-        <div class="maindiv1" onclick="closeSidebar()">
+        <div class="maindiv1">
+            <div class="cursor"></div>
             <div class="div1-maindiv1">
                 <div class="">
                     <div class="div1-maindiv1-div1">HII I AM 
@@ -58,8 +60,8 @@
                     <span><a href="https://www.instagram.com/gxku__0_4/"><img src="source\Icons\istbgr.png" class="ico1"></a></span>
             </div>  
         </div>
-        <div class="maindiv2" id="about" onclick="closeSidebar()">
-            <div class="maindiv2-div1" >
+        <div class="maindiv2" id="about" >
+            <div class="maindiv2-div1">
                 <div>
                     <div class="maindiv2-div1-div1"><span class="maindiv2-div1-div1-span">about me</span></div>
                 </div>
@@ -78,7 +80,7 @@
                </div>
             </div>
         </div>
-        <div class="maindiv3" onclick="closeSidebar()">
+        <div class="maindiv3">
             <div>
                 <div class="maindiv3-div1">
                     <span class="maindiv3-div1-span">skills</span>
@@ -86,33 +88,33 @@
                 <div class="maindiv3-div2">
                    <div class="maindiv3-div3">
                         <span class="maindiv3-div3_span1">django</span>
-                        <span class="maindiv3-div3_span1">python</span> 
-                        <span class="maindiv3-div3_span1">django Rest Framework</span>
-                        <span class="maindiv3-div3_span1">Sqlite</span>
+                        <span class="maindiv3-div3_span2">python</span> 
+                        <span class="maindiv3-div3_span3">django Rest Framework</span>
+                        <span class="maindiv3-div3_span4">Sqlite</span>
                         <span class="maindiv3-div3_span1">Postgresql</span> 
-                        <span class="maindiv3-div3_span1">Mongodb</span>
-                        <span class="maindiv3-div3_span1">Rest Api</span>
-                        <span class="maindiv3-div3_span1">javascript</span> 
+                        <span class="maindiv3-div3_span2">Mongodb</span>
+                        <span class="maindiv3-div3_span3">Rest Api</span>
+                        <span class="maindiv3-div3_span4">javascript</span> 
                         <span class="maindiv3-div3_span1">HTML</span> 
-                        <span class="maindiv3-div3_span1">CSS</span>
-                        <span class="maindiv3-div3_span1">JSON</span>
-                        <span class="maindiv3-div3_span1">cloud computing (IBM)</span>
+                        <span class="maindiv3-div3_span2">CSS</span>
+                        <span class="maindiv3-div3_span3">JSON</span>
+                        <span class="maindiv3-div3_span4">cloud computing (IBM)</span>
                         <span class="maindiv3-div3_span1">ORM</span>
-                        <span class="maindiv3-div3_span1">ODM</span>
-                        <span class="maindiv3-div3_span1">MVC</span>
-                        <span class="maindiv3-div3_span1">MVC</span>
+                        <span class="maindiv3-div3_span2">ODM</span>
+                        <span class="maindiv3-div3_span3">MVC</span>
+                        <span class="maindiv3-div3_span4">MVC</span>
                         <span class="maindiv3-div3_span1">debugging</span>
-                        <span class="maindiv3-div3_span1">Version control</span>
-                        <span class="maindiv3-div3_span1">deployment</span>
-                        <span class="maindiv3-div3_span1">Digital marketing</span> 
-                        <span class="maindiv3-div3_span1">English - Typewriting</span>
+                        <span class="maindiv3-div3_span2">Version control</span>
+                        <span class="maindiv3-div3_span3">deployment</span>
+                        <span class="maindiv3-div3_span4">Digital marketing</span> 
+                        <span class="maindiv3-div3_span2">English - Typewriting</span>
                    </div>
                 </div>
             </div>
         </div>
-        <div class="maindiv4" id="works" onclick="closeSidebar()">
+        <div class="maindiv4" id="works">
             <div>
-                <div class="maindiv4-div1_div2">projects</div>
+                <div class="maindiv4-div1_div2"><span class="maindiv3-div1-span">projects</span></div>
             </div>
             <div class="maindiv4-div2">
                 <button class="maindiv4-arrow-but but-lft" onclick="scrollslider(-1)">&#10094</button>
@@ -192,37 +194,47 @@
                 <button class="maindiv4-arrow-but but-rgt" onclick="scrollslider(1)">&#10095</button>
             </div>
         </div>
-        <div class="maindiv5" id="cont" onclick="closeSidebar()">
+        <div class="maindiv5" id="cont">
             <div class="maindiv5-div1">
                 <div class="maindiv_tit5"><span class="maindiv2-div1-div1-span">Contact me</span></div>
                 <div class="maindiv_tit5_sub-tit">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</div>
-                <div class="maindiv5_div1-div3">
+                <form class="maindiv5_div1-div3" id="contact-form">
                     <div>
                         <div class="maindiv5_div1-div3-inp_subtit">Name</div>
-                        <input type="text" class="maindiv5_div1-div3-inp">
+                        <input type="text" class="maindiv5_div1-div3-inp" id="name" name="name" required>
                     </div>
                     <div>
                         <div class="maindiv5_div1-div3-inp_subtit" >Email</div>
-                        <input type="text" class="maindiv5_div1-div3-inp">
+                        <input type="text" class="maindiv5_div1-div3-inp" id="email" name="email" required>
                     </div>
                     <div>
                         <div class="maindiv5_div1-div3-inp_subtit">Message</div>
-                        <textarea  class="maindiv5_div1-div3-inp"></textarea>
+                        <textarea  class="maindiv5_div1-div3-inp" id="message" name="message"></textarea>
                     </div>
                     <div>
                         <button> SENT<span class="maindiv5_div1-div3-butspan"></span></button>
                     </div>
-                </div>
-                <div class="maindiv2_div1-div5">Connect Us</div>
-                <div class="maindiv5_div1-div4">
-                    <span><a href=""><img src="source\Icons\linkedin-50.png" class="ico"></a></span>
-                    <span><a href=""><img src="source\Icons\icons8-github-94.png" class="ico"></a></span>
-                    <span><a href=""><img src="source\Icons\discord-50.png" class="ico"></a></span>
-                    <span><a href=""><img src="source\Icons\telegram-50.png" class="ico"></a></span>
-                     <span><a href=""><img src="source\Icons\icons8-instagram-94.png" class="ico"></a></span>
-                </div>
+                </form>
+            </div>
+        </div>
+        <div class="maindiv6">
+            <div class="maindiv2_div1-div5">
+                <div>©️ 2025 <a href="mailto:gs164945@gmail.com;?subject= Job Applications" style="color: #a47e1b;text-decoration: none;">gs164945@gmail.com</a></div>
+            </div>
+            <div class="maindiv5_div1-div4">
+                <span><a href="https://www.linkedin.com/in/gokul-saravanan-062375277"><img src="source\Icons\linkedin-50.png" class="ico"></a></span>
+                <span><a href="https://github.com/GOKUL988"><img src="source\Icons\icons8-github-94.png" class="ico"></a></span>
+                <span><a href="https://discord.com/invite/goku00044"><img src="source\Icons\discord-50.png" class="ico"></a></span>
+                <span><a href="https://t.me/Gokul_saravanan"><img src="source\Icons\telegram-50.png" class="ico"></a></span>
+                <span><a href="https://www.instagram.com/gxku__0_4/"><img src="source\Icons\icons8-instagram-94.png" class="ico"></a></span>
             </div>
         </div>
         <script src="main.js"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            (function(){
+            emailjs.init("fLs18AFAbsmKsJONe");
+            })();
+        </script>
     </body>
 </html>

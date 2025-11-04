@@ -2,10 +2,10 @@ function sidetoggle() {
   toggle = document.getElementById("side-toggle");
   overlay = document.getElementById("overlay");
 
-  if (toggle.style.width === "250px") {
+  if (toggle.style.width === "100%") {
     toggle.style.width = "0";
   } else {
-    toggle.style.width = "250px";
+    toggle.style.width = "100%";
   }
 }
 function closeSidebar() {
@@ -47,7 +47,7 @@ window.addEventListener("load", fadeSkills);
 
 function scrollslider(direct){
   slide1 = document.getElementById('slide'); 
-  scrollamt = 300; 
+  scrollamt = 400; 
   slide1.scrollBy({
     left: direct * scrollamt, 
     behavior : 'smooth'
@@ -88,3 +88,32 @@ function cont(){
     document.getElementById("side-toggle").style.width = "0";
   }
 }
+const cursor = document.querySelector(".cursor");
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+
+window.addEventListener("scroll", function() {
+  const navbar = document.querySelector(".ani1-tab1");
+  const logoCell = document.querySelector(".tab1-td1");
+
+  if (window.scrollY > 100) {
+    navbar.classList.add("ani1-tab1-src");
+    logoCell.classList.add("hidden");
+  } else {
+    navbar.classList.remove("ani1-tab1-src");
+    logoCell.classList.remove("hidden");
+  }
+});
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_4ubpd09", "template_ullw9wc", this)
+      .then(() => {
+        alert("Message sent successfully!");
+      }, (error) => {
+        alert("Error: " + JSON.stringify(error));
+      });
+  });

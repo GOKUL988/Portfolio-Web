@@ -3,96 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading to Main Page</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-/* Sidebar */
-.side_toggle {
-  display: block;
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #cfcfcf28;
-  overflow-x: hidden;
-  transition: 0.4s;
-  padding-top: 60px;
-  z-index: 1100;
-}
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #0b0b0b;
+    color: white;
+    overflow: hidden;
+  }
 
-/* Overlay */
-#overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  z-index: 1000;
-}
+  /* ----------- Loading Screen ----------- */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, #0b0b0b 60%, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 1s ease, visibility 1s ease;
+    z-index: 9999;
+  }
 
-/* Content area */
-.main-content {
-  padding: 20px;
-  height: 100%;
-}
+  #loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .spinner {
+    border: 6px solid #222;
+    border-top: 6px solid #00e0ff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .load-text {
+    margin-top: 15px;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: #00e0ff;
+    animation: blink 1.2s infinite alternate;
+  }
+
+  @keyframes blink {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+  }
+
+  /* ----------- Main Page ----------- */
+  #main-content {
+    display: none;
+    text-align: center;
+    padding-top: 100px;
+    transition: opacity 1s ease;
+  }
+
+  #main-content.show {
+    display: block;
+    opacity: 1;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    color: #00e0ff;
+  }
+
+  p {
+    color: #aaa;
+    margin-top: 10px;
+  }
 </style>
 </head>
 <body>
 
-<!-- Sidebar -->
-<div class="side_toggle" id="sideToggle">
-  <a href="#">Home</a><br>
-  <a href="#">About</a><br>
-  <a href="#">Contact</a>
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="spinner"></div>
+  <div class="load-text">Loading...</div>
 </div>
 
-<!-- Overlay -->
-<div id="overlay"></div>
+<!-- Main Page Content -->
+<div id="main-content">
+  <h1>Welcome to My Website 🌐</h1>
+  <p>This is your main page content.</p>
+</div>
 
-<!-- Button to open sidebar -->
-<button onclick="openSide()">☰ Open Sidebar</button>
-
-<!-- Main page content -->
-<div class="main-content">
-  <h2>Click anywhere to close sidebar</h2>
-  <p>Try opening the sidebar and clicking outside it.</p>
-</div>
-<div class="main-content">
-  <h2>Click anywhere to close sidebar</h2>
-  <p>Try opening the sidebar and clicking outside it.</p>
-</div>
-<div class="main-content">
-  <h2>Click anywhere to close sidebar</h2>
-  <p>Try opening the sidebar and clicking outside it.</p>
-</div>
 <script>
-const sidebar = document.getElementById('sideToggle');
-const overlay = document.getElementById('overlay');
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    const main = document.getElementById("main-content");
 
-function openSide() {
-  sidebar.style.width = '250px';
-  overlay.style.display = 'block';
-}
+    setTimeout(() => {
+      loader.classList.add("fade-out");
 
-function closeSide() {
-  sidebar.style.width = '0';
-  overlay.style.display = 'none';
-}
-
-// Close sidebar when clicking overlay or anywhere outside sidebar
-document.addEventListener('click', function(e) {
-  const isClickInside = sidebar.contains(e.target);
-  const isButton = e.target.tagName === 'BUTTON';
-
-  // Close only if sidebar is open and click is outside
-  if (!isClickInside && sidebar.style.width === '250px' && !isButton) {
-    closeSide();
-  }
-});
+      setTimeout(() => {
+        loader.style.display = "none";
+        main.classList.add("show");
+        document.body.style.overflow = "auto";
+      }, 1000);
+    }, 1500); // you can adjust delay before fade-out
+  });
 </script>
 
 </body>
