@@ -65,7 +65,7 @@ html::-webkit-scrollbar {
     border-radius: 25px;
     margin-top: 5px;
     transition: all 0.5s ease;
-    font-family: 'Trebuchet MS';
+    font-family:monospace ;
 }
 .ani1-tab1.ani1-tab1-src{
         background: rgba(0, 0, 0, 0.4);
@@ -127,7 +127,7 @@ html::-webkit-scrollbar {
   color: #f2e9e4; 
 }
 .multi-txt1 span{
-    background: linear-gradient(130deg,#c49ff9, #91c0e9,#d1957f);
+background: linear-gradient(120deg, grey, whitesmoke);
      display: inline-block; 
     transform-origin: 0% 70%; 
     transform-style: preserve-3d;
@@ -156,6 +156,8 @@ html::-webkit-scrollbar {
     border: none; 
     margin: 3px;
     text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
 }
 .basicbut:hover{
     border: none;
@@ -318,9 +320,12 @@ html::-webkit-scrollbar {
         left: 28%;
     }
 }
-@media (min-width:1024px) and (max-width:1490px){
+@media (min-width:1024px) and (max-width:1440px){
     .ani1-tab1.ani1-tab1-src{
         left: 34%;
+    }
+    .scroll-anim11{
+        margin: 20% 0 0px 0;
     }
 }
 .scroll-anim{
@@ -356,7 +361,7 @@ html::-webkit-scrollbar {
     transform-origin: 0% 70%; 
     transform-style: preserve-3d;
     animation: ani-rot 3s forwards linear;
-    background: linear-gradient(90deg, #00c6ff, #0072ff, #00f2fe);
+   background: linear-gradient(90deg,#a870f7, #76b4eb,#d17959);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
 }
@@ -454,7 +459,7 @@ html::-webkit-scrollbar {
   border-right: 2px dotted #ffffff;
   width: 0;
   opacity: 0;
-  animation: typing 4s steps(40, end) forwards,
+  animation: typing 3s steps(40, end) forwards,
              blink 0.7s step-end infinite;
     animation-play-state: paused;
 }
@@ -494,7 +499,7 @@ html::-webkit-scrollbar {
         flex: 6%;
         width: 90%;
         height: max-content;
-        margin-top: 20px;
+        margin-top: 30px;
         margin-bottom: 0;
     }
     .maindiv2-div2 {
@@ -518,8 +523,8 @@ html::-webkit-scrollbar {
         margin: 0;
         font-size: medium;
         font-weight: 400;
-        line-height: 20px;
-        text-align: justify;
+        line-height: 30px;
+        text-align:start;
     } 
     .maindiv2-div1-div1-span{
         font-size: 25px;
@@ -534,6 +539,8 @@ html::-webkit-scrollbar {
     .maindiv2-div2-div2 {
         margin: 10px 10px 10px 15px;
         padding-bottom: 10px;
+        line-height: 30px; 
+        text-align: start;
     }
     .maindiv2-div1 {
         margin-top: 50px;
@@ -549,7 +556,7 @@ html::-webkit-scrollbar {
     border-bottom-right-radius: 15%;
     width: 100%; 
     height: max-content;
-    padding-top: 20px;
+    padding-top: 30px;
     opacity: 0;
     transition: opacity 0.8s ease-in-out, transform 1s ease-in-out;
 }
@@ -570,7 +577,7 @@ html::-webkit-scrollbar {
   white-space: nowrap;
   overflow: hidden;
   width: 0;
-  animation: typing-skill 4s steps(40, end) forwards; 
+  animation: typing-skill 3s steps(40, end) forwards; 
     animation-play-state: paused;
 }
 .maindiv3-div1-span.show {
@@ -640,12 +647,18 @@ html::-webkit-scrollbar {
         border-bottom-left-radius: 5%; 
         border-bottom-right-radius: 5%;
     }
+    .maindiv3-div3 span{
+        font-size: medium;
+    }
 }
 @media (min-width:700px) and (max-width:1024px){
     .maindiv3-div3{
         width: 90%; 
         margin-left: 10%;
         margin-right: 5%; 
+    }
+    .maindiv3-div3 span{
+        font-size: medium;
     }
 }
 /* page 4*/
@@ -721,7 +734,6 @@ html::-webkit-scrollbar {
     transition: all 350ms ease-in-out;
     scrollbar-width: none;     
 }
-
 .maindiv4-div2_div1-box:hover{
     transform: translateY(-10px);
      box-shadow: 0 8px 23px rgba(0,0,0,0.2);
@@ -997,5 +1009,13 @@ html::-webkit-scrollbar {
     }
     .maindiv2_div1-div5{
         text-align: center;
+    }
+    .cursor{
+        display: none;
+    }	
+}
+@media (min-width:700px) and (max-width:1024px) {
+    .cursor{
+        display: none;
     }
 }
