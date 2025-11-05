@@ -4,7 +4,6 @@ html{
   scrollbar-width: none; 
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
-  cursor: pointer;
 }
 html::-webkit-scrollbar {
   display: none;
@@ -632,7 +631,7 @@ background: linear-gradient(120deg, grey, whitesmoke);
 .maindiv3-div3 span.show:hover {
   transform: translateY(40px) scale(1.1);
 }
-.maindiv3-div3_span1 {  background-color: #96A8A8; color:black;}
+.maindiv3-div3_span1 {  background-color: beige; color:black;}
 .maindiv3-div3_span2 {  background-color: #574F44; color:white;}
 .maindiv3-div3_span3 {  background-color: #441404; color:white;}
 .maindiv3-div3_span4 {  background-color: #C8906D; color:black;} 
