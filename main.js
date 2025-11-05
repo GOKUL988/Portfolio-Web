@@ -37,7 +37,7 @@ function fadeSkills() {
     spans.forEach((span, i) => {
       setTimeout(() => {
         span.classList.add("show");
-      }, i * 120);
+      }, i * 100);
     });
   }
 }

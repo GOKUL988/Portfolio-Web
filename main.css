@@ -571,19 +571,19 @@ background: linear-gradient(120deg, grey, whitesmoke);
     transform: translate(0);
 }
 .maindiv3-div1{
-   text-transform: uppercase; 
+    text-transform: uppercase; 
     font-size: large; 
     font-weight: bold;
     text-align: center;
 }
 .maindiv3-div1-span {
-  font-size: 30px;
-  color: #eb5e28;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing-skill 3s steps(40, end) forwards; 
+    font-size: 30px;
+    color: #eb5e28;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing-skill 3s steps(40, end) forwards; 
     animation-play-state: paused;
 }
 .maindiv3-div1-span.show {
@@ -795,6 +795,7 @@ background: linear-gradient(120deg, grey, whitesmoke);
     .maindiv4{
         height: max-content;
         margin: 0 ;
+        padding: 0;
         width: 100%;
     }
     .maindiv4-div1_div2{
@@ -802,7 +803,8 @@ background: linear-gradient(120deg, grey, whitesmoke);
     }
     .maindiv4-div2{
         width: 100%;
-        padding-left: 0;
+        padding: 0; 
+        margin: 0;
     }
     .but-rgt{
         right: 0;
@@ -811,11 +813,11 @@ background: linear-gradient(120deg, grey, whitesmoke);
         left: 0;
     }
     .maindiv4-div2_div1-box{
-        width: 280px;
-        padding: 10;
+        width: 260px;
         margin: 0;
     }
     .maindiv4-arrow-but{
+        display: flex;
         z-index: 1100;
     }
 }
