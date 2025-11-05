@@ -5,6 +5,13 @@ html{
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
 }
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 html::-webkit-scrollbar {
   display: none;
   width: 0;
